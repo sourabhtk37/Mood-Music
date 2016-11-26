@@ -11,3 +11,9 @@ def sentiment_analyser(request):
 	"""
 	s=request
 	return HttpResponse(s) 
+
+def deploy_detail(request):
+	"""
+	To receive the deployment detail from app
+	"""
+	return HttpResponse("Received")
