@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-import json
-import requests
-import praw
+from django.views.decorators.csrf import csrf_exempt
+#import json
+#import requests
+#import praw
 
 
 def sentiment_analyser(request):
@@ -12,6 +13,7 @@ def sentiment_analyser(request):
 	s=request
 	return HttpResponse(s) 
 
+@csrf_exempt
 def deploy_detail(request):
 	"""
 	To receive the deployment detail from app
