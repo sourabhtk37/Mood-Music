@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-#import json
-#import requests
+import json
+import cgi
+import requests
 #import praw
 
 
@@ -18,4 +19,11 @@ def deploy_detail(request):
 	"""
 	To receive the deployment detail from app
 	"""
-	return HttpResponse("Received")
+	form = cgi.FieldStorage(
+		environ={'REQUEST_METHOD':'POST'}
+	)
+	data=form.getvalue("OS")
+	r=request.POST
+	return HttpResponse(data)
+
+
