@@ -19,11 +19,7 @@ def deploy_detail(request):
 	"""
 	To receive the deployment detail from app
 	"""
-	form = cgi.FieldStorage(
-		environ={'REQUEST_METHOD':'POST'}
-	)
-	data=form.getvalue("OS")
-	r=request.POST
+	data=json.loads(request.body)
 	return HttpResponse(data)
 
 
