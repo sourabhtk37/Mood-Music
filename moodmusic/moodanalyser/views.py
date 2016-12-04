@@ -11,8 +11,10 @@ def sentiment_analyser(request):
 	"""
 	retrieves a url to scrape and returns sentiment
 	"""
-	request_body_size = int(request.POST('CONTENT_LENGTH', 0))
-	return HttpResponse(request['wsgi.post_form']) 
+	print request.body["name"]
+	# request_body_size = 
+	# return HttpResponse(request['wsgi.post_form']) 
+	return HttpResponse("done")
 
 @csrf_exempt
 def deploy_detail(request):

